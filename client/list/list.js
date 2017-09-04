@@ -90,6 +90,7 @@ listHelper = {
                 listHelper.tikWork()
             }, 1000)
         } else {
+            S.addWorkedTime(parseInt(listHelper.timeWork))
             $('.added-task-' + this.startId).find('.work .circle-spinner-right-hover').hide()
             $('.added-task-' + this.startId).find('.work .circle-spinner').hide()
             if (this.tikWorkTemp == 0) {
@@ -122,6 +123,7 @@ listHelper = {
                 listHelper.tikRest()
             }, 1000)
         } else {
+            S.addBreakTime(parseInt(listHelper.timeRest))
             $('.added-task-' + this.startId).find('.rest .circle-spinner-right-hover').hide()
             $('.added-task-' + this.startId).find('.rest .circle-spinner').hide()
             listHelper.tikWorkStatus = 'stop'
@@ -328,6 +330,14 @@ Template.list.events({
         DBtasks.update(this._id, {$set: {star: listHelper._isStar(this._id)}})
     },
     "change .added-task-checkbox input": function (event) {
-        DBtasks.update(this._id, {$set: {complete: listHelper._isComplete(this._id)}})
+        let isC = listHelper._isComplete(this._id)
+        DBtasks.update(this._id, {$set: {complete: isC}})
+        if (isC) {
+            S.addCompleteTask()
+        } else {
+
+            S.removeCompleteTask()
+        }
     },
 });
+

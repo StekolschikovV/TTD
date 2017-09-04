@@ -11,8 +11,7 @@ S = {
         S.tempDB = DBstatistik.find().fetch()
     },
 
-    events() {
-    },
+    events() {},
 
     _getStartDayTime() {
         console.log('%c S._getStartDayTime()', 'background:blue;color:#fff;padding:2px 10px 2px 5px')
@@ -23,7 +22,6 @@ S = {
         console.log('%c S._addNewDayToDB()', 'background:blue;color:#fff;padding:2px 10px 2px 5px')
 
         let dataInDB = DBstatistik.find({date: S.date}).fetch()
-        console.log(dataInDB)
         if (dataInDB.length == 0) {
             console.log('dataInDB.length')
             DBstatistik.insert({
