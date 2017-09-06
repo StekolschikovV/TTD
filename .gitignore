@@ -1,0 +1,8 @@
+node_modules/*
+.idea/*
+.idea/vcs.xml
+.meteor/local/*
+settings.json
+*.swp
+npm-debug.log
+packages/*/.npm/
