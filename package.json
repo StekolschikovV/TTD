@@ -1,1 +1,11 @@
-{ "electron": { "name": "MyApp", "title": "MyApp", "icon": { "darwin": "client/myapp.icns", "win32": "client/myapp.ico" }, "version": "0.1.0", "description": "A really cool app.", "height": 768, "width": 1024, "frame": true, "resizable": true, "runOnStartup": false } }
+{
+  "name": "TTD",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4"
+  }
+}
