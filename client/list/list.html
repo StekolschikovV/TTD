@@ -1,29 +1,31 @@
 <template name="list">
     <div class="container">
         <div class="row">
-        <div class="col-lg-12 add-new-task-group">
-            <div class="input-group">
-                <input type="text" placeholder="выделите название новой задачи" class="form-control add-new-task-input">
-                <span class="input-group-btn">
+            <div class="col-lg-12 add-new-task-group">
+                <div class="input-group">
+                    <input type="text" placeholder="выделите название новой задачи"
+                           class="form-control add-new-task-input">
+                    <span class="input-group-btn">
                     <button class="btn btn-default add-new-task-btn" type="button">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </button>
                 </span>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-12 all-tags">
-            All tags: {{{allTags}}}
-        </div>
-        <ul id="added-tas-container" class="col-lg-12">
-            {{#each getTasks}}
-                <li class="added-task added-task-{{_id}} ui-state-default" data-id="{{_id}}" data-idPosition="{{idPosition}}">
-                    <div class="input-group {{#if star}} star {{/if}}">
+            <div class="col-lg-12 all-tags">
+                All tags: {{{allTags}}}
+            </div>
+            <ul id="added-tas-container" class="col-lg-12">
+                {{#each getTasks}}
+                    <li class="added-task added-task-{{_id}} ui-state-default" data-id="{{_id}}"
+                        data-idPosition="{{idPosition}}">
+                        <div class="input-group {{#if star}} star {{/if}}">
                     <span class="input-group-addon added-task-checkbox">
                         <input type="checkbox" {{complete}}>
                     </span>
-                        <input type="text" class="form-control added-task {{#if complete}} complete {{/if}}"
-                               value="{{title}}">
-                        <span class="input-group-btn">
+                            <input type="text" class="form-control added-task {{#if complete}} complete {{/if}}"
+                                   value="{{title}}">
+                            <span class="input-group-btn">
                         <button class="btn btn-default added-task-dop-btn" type="button" data-id="{{_id}}">
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         </button>
@@ -35,10 +37,10 @@
                         </button>
 
                     </span>
-                    </div>
-                    <div class="dop-block clearfix">
-                        <div class="tomato-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                            <div class="wrapper-work">
+                        </div>
+                        <div class="dop-block clearfix">
+                            <div class="tomato-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="wrapper-work">
                             <span class="work">
                                 <div class="circle-spinner-white">
                                 <div>Work</div>
@@ -66,7 +68,7 @@
                                     <div class="right"></div>
                                 </div>
                             </span>
-                                <span class="rest">
+                                    <span class="rest">
                                 <div class="circle-spinner-white">
                                     <div>Rest</div>
                                     <input type="text" class="rest-time-input" value="1">
@@ -93,33 +95,33 @@
                                     <div class="right"></div>
                                 </div>
                             </span>
-                            </div>
+                                </div>
 
-                            <div class="wrapper-btn">
-                                <button class="start-btn" data-id="{{_id}}">Start</button>
-                                <button class="stop-btn">Stop</button>
-                                <button class="paus-btn">Paus</button>
+                                <div class="wrapper-btn">
+                                    <button class="start-btn" data-id="{{_id}}">Start</button>
+                                    <button class="stop-btn">Stop</button>
+                                    <button class="paus-btn">Paus</button>
+                                </div>
+                            </div>
+                            <div class="statistik-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <h5>Date added: {{date}}</h5>
+                                <h5>Completed sessions: {{sessions}}</h5>
+                                <h5>Worked: {{worked}}m</h5>
+                                <h5>Rested: {{rested}}m</h5>
+                            </div>
+                            <div class="tag-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <textarea rows="9" placeholder="Enter tag(home, work)" value="{{tags}}"></textarea>
+                            </div>
+                            <div class="note-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <textarea rows="9" placeholder="Enter note" value="{{note}}"></textarea>
                             </div>
                         </div>
-                        <div class="statistik-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                            <h5>Date added: {{date}}</h5>
-                            <h5>Completed sessions: {{sessions}}</h5>
-                            <h5>Worked: {{worked}}m</h5>
-                            <h5>Rested: {{rested}}m</h5>
-                        </div>
-                        <div class="tag-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                            <textarea rows="9" placeholder="Enter tag(home, work)" value="{{tags}}"></textarea>
-                        </div>
-                        <div class="note-block col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                            <textarea rows="9" placeholder="Enter note" value="{{note}}"></textarea>
-                        </div>
-                    </div>
-                </li>
-            {{/each}}
-        </ul>
-        {{#unless getTasks}}
-            11
-        {{/unless}}
-    </div>
+                    </li>
+                {{/each}}
+            </ul>
+            {{#unless getTasks}}
+                11
+            {{/unless}}
+        </div>
     </div>
 </template>

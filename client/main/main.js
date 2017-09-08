@@ -10,8 +10,8 @@ Router.route('/statistik', function () { this.render( 'statistik' ) });
 // DONE: add field in DBhistory (date, completeTask, workedTime, breakTime)
 // DONE: to bind events to DBhistory
 // DONE: show statistics data
-// TODO: statistik date to human-readable format
-// TODO: add statistik style
+// DONE: statistik date to human-readable format
+// DONE: add statistik style
 // ...
 // ...
 

@@ -1,13 +1,19 @@
 <template name="statistik">
-    <ul>
-        {{#each testArr}}
-            <li>
-                <div>date: <time datetime="{{date}}">{{date}}</time></div>
-                <div>completeTask: {{completeTask}}</div>
-                <div>workedTime: {{workedTime}}</div>
-                <div>breakTime: {{breakTime}}</div>
-            </li>
-        {{/each}}
-    </ul>
+    <div class="container statistik">
+        <div class="row">
+            <div class="col-lg-12">
+                {{#each statistikLine}}
+                    <div class="col-xs-3 statistik-block">
+                        <a href="#" class="thumbnail">
+                            <div>Date: {{date}}</div>
+                            <div>Complete task: {{completeTask}}</div>
+                            <div>Worked time: {{workedTime}}</div>
+                            <div>Break time: {{breakTime}}</div>
+                        </a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
 </template>
 

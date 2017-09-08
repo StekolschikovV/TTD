@@ -23,7 +23,6 @@ S = {
 
         let dataInDB = DBstatistik.find({date: S.date}).fetch()
         if (dataInDB.length == 0) {
-            console.log('dataInDB.length')
             DBstatistik.insert({
                 "date": S.date,
                 "completeTask": 0, // int count
@@ -71,9 +70,14 @@ Template.statistik.helpers({
         console.log('test')
         return 'test'
     },
-    "testArr": function () {
-        console.log('testArr'+ DBstatistik.find().fetch())
-        return DBstatistik.find().fetch()
+    "statistikLine": function () {
+        let arr = DBstatistik.find().fetch()
+        for ( let i = 0; i < arr.length; i++){
+
+            let data = new Date(arr[i].date)
+            arr[i].date = `${data.getDay()}.${data.getMonth()}.${data.getFullYear()}`
+        }
+        return arr
     },
 })
 
