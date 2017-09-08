@@ -1,5 +1,5 @@
 DBtasks = new Ground.Collection(null)
-DBhistory = new Ground.Collection('history')
+DBstatistik = new Ground.Collection('statistik')
 
 Router.configure({ layoutTemplate: 'main' });
 Router.route('/', function () { this.render( 'list' ) });

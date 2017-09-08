@@ -1,1 +1,1 @@
-DBhistory = new Ground.Collection('history')
+DBstatistik = new Ground.Collection('statistik')

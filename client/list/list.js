@@ -1,4 +1,5 @@
 listHelper = {
+
     startId: 0,
     startBlock: '',
     timeWork: 0,
@@ -9,10 +10,11 @@ listHelper = {
     allTagsUnique: [],
     pushArr: [],
     clickTagOld: '',
+
     start(id) {
         console.log('%c start: ' + id, 'background:green;color:#fff;padding:2px 10px 2px 5px')
-
     },
+
     getData() {
         console.log('%c getData', 'background:green;color:#fff;padding:2px 10px 2px 5px')
 
@@ -91,7 +93,7 @@ listHelper = {
             $('.added-task-' + this.startId).find('.work .circle-spinner-right-hover').hide()
             $('.added-task-' + this.startId).find('.work .circle-spinner').hide()
             if (this.tikWorkTemp == 0) {
-                listHelper.tikRestTemp = listHelper.timeRest * 60 // TODO: test data
+                listHelper.tikRestTemp = listHelper.timeRest * 60
                 // listHelper.tikRestTemp = 60
                 listHelper.tikRest()
             }
@@ -212,6 +214,7 @@ listHelper = {
         else
             return false
     }
+
 }
 
 Template.list.rendered = function () {
