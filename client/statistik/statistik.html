@@ -1,3 +1,13 @@
 <template name="statistik">
-    statistik
+    <ul>
+        {{#each testArr}}
+            <li>
+                <div>date: <time datetime="{{date}}">{{date}}</time></div>
+                <div>completeTask: {{completeTask}}</div>
+                <div>workedTime: {{workedTime}}</div>
+                <div>breakTime: {{breakTime}}</div>
+            </li>
+        {{/each}}
+    </ul>
 </template>
+

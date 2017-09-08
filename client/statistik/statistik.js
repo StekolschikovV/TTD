@@ -65,3 +65,16 @@ $(document).ready(function () {
         S.start()
     }, 3000)
 })
+
+Template.statistik.helpers({
+    "test": function () {
+        console.log('test')
+        return 'test'
+    },
+    "testArr": function () {
+        console.log('testArr'+ DBstatistik.find().fetch())
+        return DBstatistik.find().fetch()
+    },
+})
+
+

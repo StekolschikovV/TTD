@@ -7,6 +7,11 @@ Router.route('/settings', function () { this.render( 'settings' ) });
 Router.route('/statistik', function () { this.render( 'statistik' ) });
 
 // DONE: fix sort save
-// TODO: add field in DBhistory (date, completeTask, workedTime, breakTime)
-// TODO: to bind events to DBhistory
-// TODO: display data statistics
+// DONE: add field in DBhistory (date, completeTask, workedTime, breakTime)
+// DONE: to bind events to DBhistory
+// DONE: show statistics data
+// TODO: statistik date to human-readable format
+// TODO: add statistik style
+// ...
+// ...
+
