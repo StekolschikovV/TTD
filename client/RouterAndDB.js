@@ -13,7 +13,7 @@ Router.route('/statistik', function () { this.render( 'statistik' ) });
 // DONE: show statistics data
 // DONE: statistik date to human-readable format
 // DONE: add statistik style
-// TODO: settings (timer sound: on/of, clock ticking sound: on/of, default work time: _25_, default rest time: _5_,)
+// TODO: settings (timer sound: on/of, clock ticking sound: on/of, default work time: _25_, default rest time: _5_)
 
 // ------------- Secondary tasks: -------------
 // TODO: fix mobile menu style
