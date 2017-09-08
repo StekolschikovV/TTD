@@ -161,58 +161,10 @@ listHelper = {
             DBtasks.update(parentId, {$set: {tagsIsFilter: !DBtasks.findOne(parentId).tagsIsFilter}})
         }
     },
-    isHasTagInId(id, tag) {
-        console.log('%c isHasTagInId', 'background:green;color:#fff;padding:2px 10px 2px 5px')
-
-        if (jQuery.inArray(tag.toString(), DBtasks.findOne(id).tags) == -1) {
-            return false
-        } else {
-            return true
-        }
-    },
     noSelection() {
         console.log('%c noSelection', 'background:green;color:#fff;padding:2px 10px 2px 5px')
 
         $('.all-tags .selection').click()
-    },
-    updateIdAfterSotable() {
-        console.log('%c updateIdAfterSotable', 'background:green;color:#fff;padding:2px 10px 2px 5px')
-
-        let nowPosition = []
-        let addedTaskAll = document.querySelectorAll('ul li')
-        for (let i = 0; i < addedTaskAll.length; i++) {
-            nowPosition.push(addedTaskAll[i].getAttribute('data-idposition'))
-        }
-        let oldPosition = []
-        for (let i = 0; i < listHelper.pushArr.length; i++) {
-            oldPosition.push(listHelper.pushArr[i].idPosition)
-        }
-        let a = ''
-        let b = ''
-        for (let i = 0; i < listHelper.pushArr.length; i++) {
-            if (oldPosition[i] != nowPosition[i]) {
-                console.log('===', nowPosition[i])
-                if (a == '')
-                    a = nowPosition[i]
-                else if (a != '' && b == '')
-                    b = nowPosition[i]
-            }
-        }
-        let aId = ''
-        let bId = ''
-        for (let i = 0; i < DBtasks.find({}).fetch().length; i++) {
-            if (DBtasks.find({}).fetch()[i].idPosition == a)
-                aId = DBtasks.find({}).fetch()[i]._id
-            if (DBtasks.find({}).fetch()[i].idPosition == b)
-                bId = DBtasks.find({}).fetch()[i]._id
-        }
-        setTimeout(function () {
-            DBtasks.update(aId, {$set: {idPosition: b}})
-        }, 0)
-        setTimeout(function () {
-            DBtasks.update(bId, {$set: {idPosition: a}})
-        }, 0)
-        listHelper.pushArr = listHelper.sort(DBtasks.find({}).fetch())
     },
     DND(e) {
         console.log('%c DND', 'background:green;color:#fff;padding:2px 10px 2px 5px')
