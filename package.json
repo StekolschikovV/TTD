@@ -1,5 +1,8 @@
 {
   "name": "TTD",
+  "version": "1.1.1",
+  "author": "Vetal",
+  "description": "Vetal",
   "private": true,
   "scripts": {
     "start": "meteor run"
@@ -9,3 +12,5 @@
     "meteor-node-stubs": "~0.2.4"
   }
 }
+
+

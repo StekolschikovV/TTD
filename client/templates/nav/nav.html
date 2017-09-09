@@ -1,5 +1,5 @@
 <template name="nav">
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar navbar-default " role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -12,9 +12,9 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/">List</a></li>
-                    <li><a href="/statistik">Statistik</a></li>
-                    <li><a href="/settings">Settings</a></li>
+                    <li class="active"><a href="/" onclick="event.preventDefault(); nav.goTo('list')">List</a></li>
+                    <li><a href="/statistik" onclick="event.preventDefault(); nav.goTo('statistik')">Statistik</a></li>
+                    <li><a href="/settings" onclick="event.preventDefault();  nav.goTo('settings')">Settings</a></li>
                 </ul>
             </div>
         </nav>

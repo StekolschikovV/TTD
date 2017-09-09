@@ -1,12 +1,12 @@
 DBtasks = new Ground.Collection(null)
 DBstatistik = new Ground.Collection('statistik')
 
-Router.configure({ layoutTemplate: 'main' });
-Router.route('/', function () { this.render( 'list' ) });
-Router.route('/settings', function () { this.render( 'settings' ) });
-Router.route('/statistik', function () { this.render( 'statistik' ) });
+// Router.configure({ layoutTemplate: 'main' });
+// Router.route('/', function () { this.render( 'list' ) });
+// Router.route('/settings', function () { this.render( 'settings' ) });
+// Router.route('/statistik', function () { this.render( 'statistik' ) });
 
-// Version 1
+// Version 0.1
 // ------------- Primary tasks: -------------
 // DONE: fix sort save
 // DONE: add field in DBhistory (date, completeTask, workedTime, breakTime)
@@ -22,7 +22,7 @@ Router.route('/statistik', function () { this.render( 'statistik' ) });
 // ------------- Final tasks: -------------
 // TODO: compile for Win, Mac, Linux
 
-// Version 2
+// Version 0.2
 // ------------- Primary tasks: -------------
 // TODO: Many styles: http://www.marinaratimer.com/, ...
 // TODO: statistic diagramma
