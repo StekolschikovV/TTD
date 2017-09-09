@@ -17,7 +17,7 @@ Router.route('/statistik', function () { this.render( 'statistik' ) });
 // DONE: settings (timer sound: on/of, clock ticking sound: on/of, default work time: _25_, default rest time: _5_)
 // ------------- Secondary tasks: -------------
 // DONE: fix mobile menu style
-// TODO: hide "All tags:" if tags 0
+// DONE: hide "All tags:" if tags 0
 // TODO: add app description
 // ------------- Final tasks: -------------
 // TODO: compile for Win, Mac, Linux

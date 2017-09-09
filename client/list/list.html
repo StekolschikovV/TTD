@@ -12,9 +12,12 @@
                 </span>
                 </div>
             </div>
-            <div class="col-lg-12 all-tags">
-                All tags: {{{allTags}}}
-            </div>
+            {{#if getTasks}}
+                <div class="col-lg-12 all-tags">
+                    All tags: {{{allTags}}}
+                </div>
+            {{/if}}
+
             <ul id="added-tas-container" class="col-lg-12">
                 {{#each getTasks}}
                     <li class="added-task added-task-{{_id}} ui-state-default" data-id="{{_id}}"
