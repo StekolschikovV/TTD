@@ -3,16 +3,16 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
-                    <span class="title">Timer sound: </span><input type="checkbox">
+                    <span class="title">Timer sound: </span><input id="timerSoundOnOf" type="checkbox" checked={{isTimerSoundOnOf}}>
                 </div>
                 <div class="form-group">
-                    <span class="title">Clock ticking sound: </span> <input type="checkbox">
+                    <span class="title">Clock ticking sound: </span> <input id="clockTickingSoundOnOf" type="checkbox" checked={{isClockTickingSoundOnOf}}>
                 </div>
                 <div class="form-group">
-                    <span class="title">Default work time:  </span><input type="text">
+                    <span class="title">Default work time:  </span><input id="defaultWorkTime" type="text" value={{defaultWorkTime}}>
                 </div>
                 <div class="form-group">
-                    <span class="title">Default rest time:  </span><input type="text">
+                    <span class="title">Default rest time:  </span><input id="defaultRestTime" type="text" value={{defaultRestTime}}>
                 </div>
             </div>
         </div>

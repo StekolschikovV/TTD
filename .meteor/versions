@@ -57,6 +57,7 @@ jquery@1.11.10
 launch-screen@1.1.1
 less@2.7.9
 livedata@1.0.18
+localstorage@1.1.1
 logging@1.1.17
 matb33:bootstrap-affix-js@10.0.0
 matb33:bootstrap-alert-js@10.0.0

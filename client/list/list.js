@@ -70,6 +70,7 @@ listHelper = {
     tikWork() {
         console.log('%c tikWork: ' + this.tikWorkTemp, 'background:green;color:#fff;padding:2px 10px 2px 5px')
 
+
         if (this.tikWorkTemp > 0 && listHelper.tikWorkStatus == 'start') {
             this.tikWorkTemp = --this.tikWorkTemp
             let oneG = 360 / (this.timeWork * 60)
@@ -84,6 +85,9 @@ listHelper = {
             }
             setTimeout(function () {
                 listHelper.tikWork()
+                if(settings.__toBool(settings.get('timerSoundOnOf'))){
+                    new Audio('tik.mp3').play()
+                }
             }, 1000)
         } else if (listHelper.tikWorkStatus == 'paus') {
             setTimeout(function () {
@@ -94,6 +98,9 @@ listHelper = {
             $('.added-task-' + this.startId).find('.work .circle-spinner-right-hover').hide()
             $('.added-task-' + this.startId).find('.work .circle-spinner').hide()
             if (this.tikWorkTemp == 0) {
+                if(settings.__toBool(settings.get('clockTickingSoundOnOf'))){
+                    new Audio('soundFinish.mp3').play()
+                }
                 listHelper.tikRestTemp = listHelper.timeRest * 60
                 // listHelper.tikRestTemp = 60
                 listHelper.tikRest()
@@ -123,6 +130,9 @@ listHelper = {
                 listHelper.tikRest()
             }, 1000)
         } else {
+            if(settings.__toBool(settings.get('clockTickingSoundOnOf'))){
+                new Audio('soundFinish.mp3').play()
+            }
             S.addBreakTime(parseInt(listHelper.timeRest))
             $('.added-task-' + this.startId).find('.rest .circle-spinner-right-hover').hide()
             $('.added-task-' + this.startId).find('.rest .circle-spinner').hide()
@@ -274,6 +284,12 @@ Template.list.helpers({
         listHelper.allTagsUnique = $.unique(allTagsUniqueClear)
         let str = allTagsUnique.toString()
         return str.replace(/\,</g, '<')
+    },
+    "defaultWorkTime": function () {
+        return settings.get('defaultWorkTime')
+    },
+    "defaultRestTime": function () {
+        return settings.get('defaultRestTime')
     }
 })
 

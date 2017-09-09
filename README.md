@@ -1,1 +1,2 @@
-meteor npm install --save react-addons-pure-render-mixin && meteor add react-meteor-data && meteor npm install --save react react-dom && meteor add mrt:jquery-ui && meteor add iron:router && meteor
+meteor npm install --save react-addons-pure-render-mixin && meteor add react-meteor-data && meteor npm install --save react react-dom && meteor add mrt:jquery-ui && meteor add iron:router && meteor add localstorage
+&& meteor
