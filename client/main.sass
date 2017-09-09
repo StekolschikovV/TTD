@@ -308,17 +308,27 @@ $TEXT-COLOR: white
 
 
 
+
+
 // NAV
 nav.navbar.navbar-default
   +CONTAINER
   margin-bottom: 50px
   position: relative
+  .navbar-toggle
+    border: 0
+    &:hover
+      background-color: $DEF-COL-BLUE--SUPER-DARK !important
+      border: 0  !important
+  *
+    border-color: $DEF-COL-BLUE !important
   .navbar-header
     .navbar-brand
+      z-index: 1
       position: absolute
       top: -1px
       left: -1px
-      height: calc(100% + 2px)
+      height: 50px
       color: $TEXT-COLOR
       background: $DEF-COL-BLUE--SUPER-DARK
   .collapse
@@ -337,7 +347,19 @@ nav.navbar.navbar-default
             box-shadow: none !important
             color: $TEXT-COLOR !important
             text-shadow: none !important
+button.navbar-toggle
+  background: $DEF-COL-BLUE !important
 
+ul li *
+  background: $DEF-COL-BLUE !important
+  color: white  !important
+  box-shadow: none !important
+
+
+
+@media( min-width: 768px )
+  nav.navbar.navbar-default .navbar-header .navbar-brand
+    height: 52px
 // 767
 //@media( max-width: 768px )
 //  .added-task
